@@ -65,7 +65,7 @@ jobs:
 
   docker-ci:
     runs-on: ubuntu-latest
-    if: ${{ github.ref_name == 'main' }}
+    if: ${{ github.ref_name == 'kapany322' }}
     needs: python-ci
     steps:
 
@@ -90,7 +90,7 @@ jobs:
 
   helm-ci:
     runs-on: ubuntu-latest
-    if: ${{ github.ref_name == 'main' }}
+    if: ${{ github.ref_name == 'kapany322' }}
     needs: python-ci
     steps:
 
@@ -103,7 +103,7 @@ jobs:
     - name: Set Up Helm
       uses: azure/setup-helm@4.2.0
 
-    - name: Lind Helm
+    - name: Lint Helm
       run: helm lint ./todoapp/
 
     - name: Template Helm
